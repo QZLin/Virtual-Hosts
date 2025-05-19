@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 
-    <uses-permission android:name="com.android.vending.BILLING"/>
+<!--    <uses-permission android:name="com.android.vending.BILLING"/>-->
     <uses-permission android:name="android.permission.BIND_VPN_SERVICE" tools:ignore="ProtectedPermissions"/>
 
     <supports-screens
@@ -31,7 +31,6 @@
             android:xlargeScreens="true"/>
 
     <application
-            android:allowBackup="false"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:supportsRtl="true"
@@ -64,21 +63,21 @@
             </intent-filter>
         </service>
 
-        <meta-data
-                android:name="BaiduMobAd_STAT_ID"
-                android:value="a7bceb64e8"/> <!-- abcd1234 -->
-        <meta-data
-                android:name="BaiduMobAd_CHANNEL"
-                android:value="${Market_CHANNEL_VALUE}"/>
-        <meta-data
-                android:name="BaiduMobAd_EXCEPTION_LOG"
-                android:value="true"/>
-        <meta-data
-                android:name="BaiduMobAd_SEND_STRATEGY"
-                android:value="APP_START"/>
-        <meta-data
-                android:name="BaiduMobAd_ONLY_WIFI"
-                android:value="false"/>
+<!--        <meta-data-->
+<!--                android:name="BaiduMobAd_STAT_ID"-->
+<!--                android:value="a7bceb64e8"/> &lt;!&ndash; abcd1234 &ndash;&gt;-->
+<!--        <meta-data-->
+<!--                android:name="BaiduMobAd_CHANNEL"-->
+<!--                android:value="${Market_CHANNEL_VALUE}"/>-->
+<!--        <meta-data-->
+<!--                android:name="BaiduMobAd_EXCEPTION_LOG"-->
+<!--                android:value="true"/>-->
+<!--        <meta-data-->
+<!--                android:name="BaiduMobAd_SEND_STRATEGY"-->
+<!--                android:value="APP_START"/>-->
+<!--        <meta-data-->
+<!--                android:name="BaiduMobAd_ONLY_WIFI"-->
+<!--                android:value="false"/>-->
 
         <service
                 android:name=".QuickStartTileService"
@@ -102,14 +101,11 @@
                     android:resource="@xml/quick_start_widget_info"/>
         </receiver>
 
-        <activity android:name=".DonationActivity"
-                  android:exported="false">
-        </activity>
 
         <activity android:name=".SettingsActivity"
                   android:label="Settings"
                   android:parentActivityName=".VhostsActivity"
-                  android:exported="false">
+                  android:exported="true">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value=".VhostsActivity"/>
